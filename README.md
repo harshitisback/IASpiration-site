@@ -7,7 +7,7 @@
 3. cmd: git clone url (paste the url of thir repo).
 ```
 ```
-git clone git@github.com:harshitisback/IASpiration.git
+git clone git@github.com:harshitisback/IASpiration-site.git
 ```
 ---
 
