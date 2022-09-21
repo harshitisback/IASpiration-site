@@ -1,0 +1,139 @@
+/* font-family: 'Merriweather', serif;
+font-family: 'Noto Serif', serif;
+font-family: 'Open Sans', sans-serif; */
+
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+body {
+    margin: 0%;
+    padding: 0%;
+
+}
+/* navbar items */
+
+.nav-logo {
+    
+    width: 15%;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+}
+
+
+@media only screen and (max-width: 576px) {
+    .nav-logo {
+        width: 25%;
+        position: absolute;
+        left: 300px;
+        
+    }
+}
+.navbarwhole {
+    margin-bottom: 5%;
+}
+
+.list {
+    margin-top: 2%;
+    margin-left: 55%;
+}
+
+.navitems {
+    letter-spacing: 2px;
+    margin: 1%;
+    font-size: 20px;
+    
+}
+#front-page {
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    background-image: url(/public/images/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 800px;
+    background-attachment: scroll;
+    
+}
+
+
+
+
+.shilam {
+    color: white;
+    padding-top: 60px;
+    /* padding-left: 10px; */
+    text-shadow: 1px 1px 2px black;
+    font-size: 6rem;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+}
+
+
+
+.shilam-para {
+    margin-top: 2%;
+    color: white;
+    font-size: 1.5rem;
+}
+
+@media(max-width:576px){
+    .shilam {
+        margin-top: 60px;
+        font-size: 3rem;
+        padding-left: 0%;
+    }
+    .shilam-para {
+        margin-top: 7%;
+        font-size: 1rem;
+    }
+}
+
+/* about */
+
+#about {
+    text-align: center;
+    min-height: 900px;
+    font-family: 'Noto Serif', serif;
+    background-image: -webkit-linear-gradient(65deg,#EEF2E6 50%, #496e71 50%);
+}
+
+.about-title {
+    text-align: left;
+    color: black;
+    margin-top: 50%; 
+    font-size: 3rem;
+    display: flex;
+    font-weight: 400;
+    justify-content: center;
+
+}
+
+.about-title2 {
+    color: white;
+    text-align: right;
+    margin-top: 5%;
+    margin-left: 7%;
+    font-weight: 400;
+    font-size: 3rem;
+}
+
+@media(max-width: 576px){
+    .about-title{
+        font-size: 2rem;
+        margin-top: 250%;
+        margin-bottom: 10%;
+        text-align: center;
+    }
+    .about-title2{
+        font-size: 2rem;
+        text-align: center;
+        margin-top: 30%;
+        margin-left: 0%;
+    }
+}
+
