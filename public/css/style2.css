@@ -382,3 +382,105 @@ footer {
 
 
 /* About Site Section Starts */
+#aboutsite {
+    /* height: 1000px; */
+}
+
+.site-heading {
+    margin-top: 189px;
+    margin-left: 152px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 72px;
+
+    color: #000000;
+
+}
+
+.site-para {
+    margin-left: 160px;
+    margin-top: 35px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+
+    color: #000000;
+
+}
+
+.site-roadmap {
+    margin-top: 119px;
+    margin-right: 188px;
+}
+
+.site-img {
+    margin-top: 132px;
+    margin-right: 125px;
+    width: 75%
+}
+
+@media(max-width:576px) {
+    .site-heading {
+        margin-top: 80px;
+        margin-left: 1px;
+        font-size: 40px;
+        line-height: 60px;
+        text-align: center;
+    }
+
+    .site-para {
+        margin-top: 70px;
+        margin-left: 86px;
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .site-roadmap {
+        margin-top: 49px;
+        margin-left: 109px;
+    }
+
+    .site-img {
+        margin-left: 28px;
+        margin-top: 2%;
+    }
+}
+
+
+.speed {
+    margin-top: 5%;
+}
+
+.speed-title {
+
+    margin-left: 5%;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 72px;
+
+    color: #000000;
+
+}
+
+.speed-img {
+    margin-left: 61px;
+}
+
+@media(max-width:576px) {
+    .speed-title {
+        margin-top: 58px;
+        left: 17px;
+        font-size: 40px;
+        line-height: 60px;
+        text-align: center;
+    }
+    .speed-img {
+        margin-left: 53px;
+    }
+}
