@@ -24,9 +24,10 @@ body {
 .nav-logo {
 
     width: 15%;
-    display: inline-block;
+    /* display: inline-block; */
     position: absolute;
     left: 0;
+    top: 0;
 }
 
 
@@ -34,7 +35,7 @@ body {
     .nav-logo {
         width: 25%;
         position: absolute;
-        left: 300px;
+        
     }
 }
 
@@ -475,6 +476,9 @@ footer {
 
 @media(max-width:576px) {
     .speed-title {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
         margin-top: 58px;
         margin-left: 17px;
         font-size: 36px;
@@ -483,6 +487,9 @@ footer {
     }
 
     .speed-img {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
         margin-left: 45px;
     }
 }
