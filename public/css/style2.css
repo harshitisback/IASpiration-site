@@ -455,9 +455,13 @@ footer {
 
 .speed {
     margin-top: 5%;
+    display: flex;
+    
 }
 
 .speed-title {
+    display: flex;
+    justify-content: right;
 
     margin-left: 5%;
     font-family: 'Poppins';
@@ -475,6 +479,10 @@ footer {
 }
 
 @media(max-width:576px) {
+
+    .speed {
+        flex-direction: column-reverse;
+    }
     .speed-title {
         display: flex;
         flex-wrap: wrap;
