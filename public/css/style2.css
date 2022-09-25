@@ -239,9 +239,10 @@ footer {
         color: #FFFFFF;
     }
 
-    
+
 
     .title-over {
+
         font-family: 'DM Mono';
         font-style: normal;
         font-weight: 500;
@@ -311,12 +312,14 @@ footer {
 
 @media(max-width:576px) {
     .overview {
+        margin-left: 40px;
         width: 173px;
         height: 208px;
         margin-top: 10px;
     }
 
     .contact {
+        padding-left: 10px;
         margin-top: 10px;
         padding-left: 36px;
         margin-left: 40px;
@@ -617,19 +620,18 @@ footer {
 
 
 /* ROADMAP PAGE */
+
 .road-top {
     margin-top: 5%;
-    margin-bottom: 5%;
+
     /* height: 300px; */
     display: flex;
     justify-content: flex-start;
-
 
 }
 
 .rt-img {
     width: 25%;
-
 
 }
 
@@ -653,11 +655,75 @@ footer {
         flex-direction: column;
         flex-direction: column-reverse;
     }
+
     .rt-head {
         font-size: 36px;
         line-height: 60px;
     }
+
     .rt-img {
         width: 30%;
     }
+}
+
+.img-contain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.roadmap-img {
+
+    width: 45%;
+    display: flex;
+}
+
+.card-contain {
+    margin-left: 3%;
+    margin-right: 3%;
+    background-color: #000000;
+    flex-flow: wrap;
+    margin-top: 7%;
+    margin-bottom: 7%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+}
+
+.card {
+    margin: 3%;
+}
+
+
+
+.rf-bottom {
+    margin: 10% 15%;
+
+    display: flex;
+    justify-self: center;
+    align-self: center;
+
+    font-family: 'Arima Madurai', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 39px;
+
+
+}
+
+@media(max-width:576px) {
+    .roadmap-img {
+        width: 95%;
+    }
+
+    .rf-bottom {
+
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+
 }
