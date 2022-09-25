@@ -631,6 +631,7 @@ footer {
 }
 
 .rt-img {
+    margin-top: 7%;
     width: 25%;
 
 }
@@ -675,7 +676,7 @@ footer {
 
 .roadmap-img {
 
-    width: 45%;
+    width: 50%;
     display: flex;
 }
 
@@ -712,6 +713,10 @@ footer {
     line-height: 39px;
 
 
+}
+
+.card-img-top {
+    width: 75%;
 }
 
 @media(max-width:576px) {
