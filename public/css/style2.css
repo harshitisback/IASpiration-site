@@ -35,7 +35,7 @@ body {
     .nav-logo {
         width: 25%;
         position: absolute;
-        
+
     }
 }
 
@@ -206,7 +206,7 @@ footer {
 
 @media(max-width:576px) {
     footer {
-        height: 1100px;
+        height: 900px;
 
         background: #171717;
     }
@@ -239,11 +239,7 @@ footer {
         color: #FFFFFF;
     }
 
-    .overview {
-        /* margin-top: 35px; */
-        margin-left: 36px;
-
-    }
+    
 
     .title-over {
         font-family: 'DM Mono';
@@ -262,7 +258,6 @@ footer {
         font-weight: 400;
         font-size: 16px;
         line-height: 20px;
-
         color: #FFFFFF;
     }
 
@@ -275,8 +270,6 @@ footer {
         font-size: 13px;
         line-height: 16px;
         /* identical to box height */
-
-
         color: #FFFFFF;
     }
 
@@ -287,7 +280,6 @@ footer {
         font-size: 24px;
         line-height: 31px;
         text-align: center;
-
         color: #FFFFFF;
     }
 
@@ -297,7 +289,6 @@ footer {
         font-weight: 400;
         font-size: 16px;
         line-height: 20px;
-
         color: #FFFFFF;
 
     }
@@ -316,6 +307,20 @@ footer {
 .contact {
     margin-top: 70px;
     padding-left: 36px;
+}
+
+@media(max-width:576px) {
+    .overview {
+        width: 173px;
+        height: 208px;
+        margin-top: 10px;
+    }
+
+    .contact {
+        margin-top: 10px;
+        padding-left: 36px;
+        margin-left: 40px;
+    }
 }
 
 .title-over {
@@ -457,8 +462,8 @@ footer {
     margin-top: 5%;
     display: flex;
     justify-content: center;
-    
-    
+
+
 }
 
 .speed-title {
@@ -485,6 +490,7 @@ footer {
     .speed {
         flex-direction: column-reverse;
     }
+
     .speed-title {
         display: flex;
         flex-wrap: wrap;
@@ -601,9 +607,57 @@ footer {
         width: 70%;
         display: inline-block;
     }
+
     .all-free {
         font-size: 24px;
         margin-left: 15%;
         margin-right: 15%;
+    }
+}
+
+
+/* ROADMAP PAGE */
+.road-top {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    /* height: 300px; */
+    display: flex;
+    justify-content: flex-start;
+
+
+}
+
+.rt-img {
+    width: 25%;
+
+
+}
+
+.rt-head {
+    margin-left: 15%;
+    justify-self: center;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 72px;
+    /* identical to box height */
+
+
+    color: #000000;
+}
+
+@media(max-width:576px) {
+    .road-top {
+        flex-direction: column;
+        flex-direction: column-reverse;
+    }
+    .rt-head {
+        font-size: 36px;
+        line-height: 60px;
+    }
+    .rt-img {
+        width: 30%;
     }
 }

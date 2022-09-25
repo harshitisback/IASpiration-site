@@ -16,6 +16,11 @@ app.get("/", function (req, res) {
 });
 
 
+app.get("/guide", function (req, res) { 
+    res.render("roadmap");
+ });
+
+
 
 app.listen(3000, function () { 
     console.log("server started at port 1000");
