@@ -23,5 +23,5 @@ app.get("/guide", function (req, res) {
 
 
 app.listen(3000, function () { 
-    console.log("server started at port 1000");
+    console.log("server started at port 3000");
  })
