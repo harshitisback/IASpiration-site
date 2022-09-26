@@ -1,0 +1,51 @@
+<%- include ("header") -%>
+
+<%- include ("navbar") -%>
+
+<section id="interview-section">
+
+
+
+
+<div class="int-head">
+    <h1>All About the UPSC and Interview with Complete Information and All Guide </h1>
+    
+</div>
+
+<img class="int-view-img" src="images/undraw_Interview_re_e5jn.png" alt="">
+
+
+<div class="int-bod">
+    <h1>UPSC Syllabus – Civil Services Interview</h1>
+</div>
+
+<ul class="int-point">
+    <li>The candidate will be interviewed by a Board who will have before them a record of his/her career. He/she will be asked questions on matters of general interest. The object of the interview is to assess the personal suitability of the candidate for a career in public service by a Board of competent and unbiased observers. The test is intended to judge the mental calibre of a candidate. In broad terms, this is really an assessment of not only his/her intellectual qualities but also social traits and his/her interest in current affairs. Some of the qualities to be judged are mental alertness, critical powers of assimilation, clear and logical exposition, a balance of judgement, variety and depth of interest, ability for social cohesion and leadership, intellectual and moral integrity.</li>
+    <li>The technique of the interview is not that of a strict cross-examination but of a natural, though directed and purposive conversation which is intended to reveal the mental qualities of the candidate.
+    </li>
+    <li>The interview test is not intended to be a test either of the specialised or general knowledge of the candidates which has been already tested through their written papers. Candidates are expected to have taken an intelligent interest not only in their special subjects of academic study but also in the events which are happening around them both within and outside their own state or country as well as in modern currents of thought and in new discoveries which should arouse the curiosity of well-educated youth.</li>
+    
+</ul>
+
+
+<div class="int-head">
+    <h1>Top Mock Interview Must Watch</h1>
+</div>
+
+
+<% for( let i = 0; i < ytlinks.length; i++ ) { %>
+
+    <div class="if-class">
+
+    
+
+   <iframe  width="560" height="315" src= <%= ytlinks[i].iframe  %>  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+   </div>
+<% } %>
+
+
+</section>
+
+
+<%- include("footer") -%>

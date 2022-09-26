@@ -732,3 +732,174 @@ footer {
 
 
 }
+
+
+/* prelims page */
+
+#prelims-page {
+    margin: 5% 7%;
+}
+
+.first-heading {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 2% 15%;
+    font-family: 'Poppins';
+    
+}
+
+.pre-all-head {
+    font-family: 'Poppins';
+}
+
+.pre-img {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+
+
+
+.second-heading{
+    margin-left: 122px;
+    
+    margin-top: 7%;
+    /* text-align: center; */
+    font-size:  1.5rem;
+    font-family: 'Merriweather', serif;
+
+}
+
+.third-heading{
+    /* display: block; */
+    margin-top: 7%;
+    margin-left: 122px;
+    text-align:left;
+    font-size:  1.5rem;
+    
+}
+
+.p1-head {
+    margin-top: 2%;
+    font-family: 'Arima Madurai', cursive;
+}
+
+.paper1list {
+    font-family: 'Arima Madurai', cursive;
+    line-height: 2;
+    margin-top: 3%;
+}
+
+
+@media(max-width:576px){
+    #prelims-page {
+        margin: 0%;
+    }
+    .first-heading {
+        margin-left: 2%;
+    }
+    .second-heading {
+        margin-left: 2%;
+    }
+    .third-heading {
+        margin-left: 2%;
+    }
+    .p1-head{
+        margin-left: 2%;
+    }
+}
+
+
+/* mains page */
+
+#mains {
+    font-family: 'Arima Madurai', cursive;
+    margin: 7% 15%;
+    
+}
+
+.mains-head {
+    font-family:"Montserrat-Black" ;
+    
+    font-size: 3.0rem;
+    /* line-height: 1.5; */
+    font-size: 200%;
+    font-weight: bold;
+    margin-left: 4%;
+}
+
+.cn {
+    padding: 5% 31%;
+    margin-left: auto;
+}
+.upsc-image{
+    /* width: 75%; */
+    padding-left: 15%;
+
+}
+#second-page{
+    padding-left: 5%;
+}
+
+.sp-container {
+    padding: 2% 15%;
+    margin-left: 8%;
+    word-break: normal;
+    width: 500%;
+}
+
+.butt {
+    margin-left: 20%;
+}
+
+
+.div-first{
+    padding-top: 5%;
+
+}
+
+/* Interview page */
+
+#interview-section {
+    margin: 7% 15%;
+
+}
+
+.int-head {
+    font-family: 'Merriweather', serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+.int-view-img {
+    margin-top: 5%;
+    width: 55%;
+    display: flex;
+    justify-self: center;
+}
+
+.int-point {
+    line-height: 2;
+    font-family: 'Arima Madurai', cursive;
+    font-size: 1.5rem;
+
+}
+
+
+.if-class {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.int-bod {
+    text-align: left;
+    margin-top: 8%;
+}
