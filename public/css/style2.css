@@ -1170,28 +1170,27 @@ footer {
     line-height: 72px;
 }
 
-.dev-img {
-    display: flex;
-    /* flex-wrap: wrap; */
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    margin-bottom: 10%;
-}
 
 .devi {
-    width: 10%;
+    width: 25%;
     border-radius: 100%;
-    margin: 2%;
+    /* margin: 2%; */
 }
 
 .dev-img {
+    
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    
 }
+
 .cdev {
-    display: inline-block;
+    text-align: center;
+    height: 200px;
+    width: 200px;
 }
+
 
 
 
