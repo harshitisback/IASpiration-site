@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyparser = require('body-parser');
 const axios = require('axios')
-const newsr=express.Router()
+const newsr = express.Router()
 const moment = require('moment')
 const math = require('math')
 const ejs = require('ejs');
@@ -13,7 +13,7 @@ var mongoose = require('mongoose');
 var mongoDB = 'mongodb+srv://amankumartiwari1502:Harsh9575381459@cluster0.2ur35sv.mongodb.net/YtlinkDB';
 mongoose.connect(mongoDB);
 
-
+//model for interview
 var Schema = mongoose.Schema;
 
 var youtubemock = new Schema({
@@ -21,6 +21,17 @@ var youtubemock = new Schema({
 });
 
 var ytModel = mongoose.model('ytlinks', youtubemock);
+
+
+// model for notez
+var notezNews = new Schema({
+
+        date: String,
+        nplink: String,
+        notes: String
+});
+
+var ntNews = mongoose.model('newspaper', notezNews );
 
 
 
@@ -91,24 +102,53 @@ app.route("/articles")
     .get(async function (req, res) {
         try {
             var url = 'http://newsapi.org/v2/top-headlines?' +
-              'country=in&' +
-              'apiKey=eaf5b5e072534b1688a2522959aa37b9';
-    
-            const news_get =await axios.get(url)
-            res.render('newsapi',{articles:news_get.data.articles})
-        }catch (error) {
-            if(error.response){
+                'country=in&' +
+                'apiKey=eaf5b5e072534b1688a2522959aa37b9';
+
+            const news_get = await axios.get(url)
+            res.render('newsapi', { articles: news_get.data.articles })
+        } catch (error) {
+            if (error.response) {
                 console.log(error)
             }
-    
+
         }
         // res.render("newsapi");
 
     })
     .post(function (req, res) {
+        
 
     });
 
+
+app.route("/notez")
+    .get(function (req, res) {
+
+        ntNews.find(function (err, found) {  
+            if(!err){
+                res.render("notez", {news:found});
+            }else {
+                res.send(err);
+            }
+        });
+
+        // res.render("notez");
+    })
+    .post(function (req, res) {
+        let date = req.body.date;
+        let link = req.body.nlink;
+        let notes = req.body.notes;
+        const newNewsP = new ntNews({
+            date:date,
+            nplink:link,
+            notes:notes
+
+        });
+
+        newNewsP.save().then(()=> res.send("Saved"));
+
+    });
 
 
 
