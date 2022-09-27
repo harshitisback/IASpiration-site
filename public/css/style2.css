@@ -932,6 +932,28 @@ footer {
     padding: 20px;
 }
 
+.articles-title {
+    font-family: 'Poppins';
+
+}
+
+.top-cur {
+    font-family: 'Poppins';
+}
+
+.topc {
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.updated-on {
+    color: red;
+    font-family: 'Poppins';
+    font-size: 20px;
+
+}
 .news-box:hover{
     text-decoration: none;
     color: rgb(29, 25, 25);;

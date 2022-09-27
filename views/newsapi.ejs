@@ -3,10 +3,13 @@
 <%- include("header") -%> 
 <%- include("navbar") -%> 
 
-
+<div class="topc">
+    <h1 class="top-cur">Top Current NEWS Article To Read</h1>
+</div>
 
     <div class="news-container ">
         <div class="news ">
+            
 
             <% articles.forEach(function(article,index){ %>
 
@@ -15,7 +18,7 @@
                         <a href="<%= article.url %>" target="_blank" class="news-box Hover-effect">
 
                             <img class="news-img" src="<%= article.urlToImage %>" alt="Image">
-                            <h3>
+                            <h3 class="articles-title">
                                 <%- article.title %>
                             </h3>
 
@@ -24,7 +27,7 @@
                                 <%= article.content.replace(/<[^>]+>/g, '') %>
                             </p>
                             <br>
-                           
+                           <p> <p class="updated-on">updated On:</p>  <%- new Date(article.publishedAt.slice(0,10)).toDateString() %> </p>
 
 
                         </a>

@@ -87,12 +87,12 @@ app.route("/interview")
     });
 
 
-app.route("/notez")
+app.route("/articles")
     .get(async function (req, res) {
         try {
             var url = 'http://newsapi.org/v2/top-headlines?' +
               'country=in&' +
-              'apiKey=36f3e29b704f41339af8439dc1228334';
+              'apiKey=eaf5b5e072534b1688a2522959aa37b9';
     
             const news_get =await axios.get(url)
             res.render('newsapi',{articles:news_get.data.articles})
