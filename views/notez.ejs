@@ -15,19 +15,29 @@
         </ul>
 
         <div class="notez-img">
-            <img src="images/undraw_Online_article_re_daq5.png" alt="">
+            <h2 class="af6">After 6 AM you can Download <br> everyday News Paper </h2>
+            <img class="nt-img" src="images/undraw_Online_article_re_daq5.png" alt="">
         </div>
 
 
         <div class="notez-news-content">
+
             <% for( let i=0; i < news.length; i++ ) { %>
-                <p>Date: <%= news[i].date %></p>
-                <a href=<%= news[i].nplink %>>Download</a>
-                
-                
-                <a href=<%= news[i].notes %> > <button class="btn btn-lg btn-success">Notes</button></a>
-               
+                <div class="content-notez">
+                    <p class="ndate">Date: <%= news[i].date %>
+                    </p>
+                    <a class="nlink" href=<%=news[i].nplink %>>Download</a>
+
+                    <div class="npbtn">
+                        <a href=<%=news[i].notes %> > <button class="btn btn-lg btn-success nbtn">Notes</button></a>
+                    </div>
+                </div>
+
+
+
                 <% } %>
+
+
 
         </div>
 

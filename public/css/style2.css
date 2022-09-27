@@ -747,7 +747,7 @@ footer {
     align-content: center;
     margin: 2% 15%;
     font-family: 'Poppins';
-    
+
 }
 
 .pre-all-head {
@@ -763,23 +763,23 @@ footer {
 
 
 
-.second-heading{
+.second-heading {
     margin-left: 122px;
-    
+
     margin-top: 7%;
     /* text-align: center; */
-    font-size:  1.5rem;
+    font-size: 1.5rem;
     font-family: 'Merriweather', serif;
 
 }
 
-.third-heading{
+.third-heading {
     /* display: block; */
     margin-top: 7%;
     margin-left: 122px;
-    text-align:left;
-    font-size:  1.5rem;
-    
+    text-align: left;
+    font-size: 1.5rem;
+
 }
 
 .p1-head {
@@ -794,20 +794,24 @@ footer {
 }
 
 
-@media(max-width:576px){
+@media(max-width:576px) {
     #prelims-page {
         margin: 0%;
     }
+
     .first-heading {
         margin-left: 2%;
     }
+
     .second-heading {
         margin-left: 2%;
     }
+
     .third-heading {
         margin-left: 2%;
     }
-    .p1-head{
+
+    .p1-head {
         margin-left: 2%;
     }
 }
@@ -818,12 +822,12 @@ footer {
 #mains {
     font-family: 'Arima Madurai', cursive;
     margin: 7% 15%;
-    
+
 }
 
 .mains-head {
-    font-family:"Montserrat-Black" ;
-    
+    font-family: "Montserrat-Black";
+
     font-size: 3.0rem;
     /* line-height: 1.5; */
     font-size: 200%;
@@ -835,12 +839,14 @@ footer {
     padding: 5% 31%;
     margin-left: auto;
 }
-.upsc-image{
+
+.upsc-image {
     /* width: 75%; */
     padding-left: 15%;
 
 }
-#second-page{
+
+#second-page {
     padding-left: 5%;
 }
 
@@ -856,7 +862,7 @@ footer {
 }
 
 
-.div-first{
+.div-first {
     padding-top: 5%;
 
 }
@@ -876,6 +882,7 @@ footer {
     justify-content: center;
     align-content: center;
 }
+
 .int-view-img {
     margin-top: 5%;
     width: 55%;
@@ -909,22 +916,24 @@ footer {
 
 .news-img {
     max-width: 100%;
-    transition: all 0.7s ;
+    transition: all 0.7s;
 }
 
-.news-container{
+.news-container {
     margin-bottom: 69px;
     padding: 0 1rem;
     padding-top: 92px;
 }
-.news{
+
+.news {
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 2rem;
 
 }
-.news-box{
-    transition: all 0.3s ;
+
+.news-box {
+    transition: all 0.3s;
     text-decoration: none;
     color: rgb(29, 25, 25);
 
@@ -954,19 +963,23 @@ footer {
     font-size: 20px;
 
 }
-.news-box:hover{
+
+.news-box:hover {
     text-decoration: none;
-    color: rgb(29, 25, 25);;
-    box-shadow: 0 3px 3px rgba(0,0,0,0.16), 0 3px 3px rgba(0,0,0,0.23);
+    color: rgb(29, 25, 25);
+    ;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16), 0 3px 3px rgba(0, 0, 0, 0.23);
 }
 
 .Hover-effect {
     position: relative;
 }
-:root{
+
+:root {
     --underline_color: red;
-    --underline-hight:0.175rem;
+    --underline-hight: 0.175rem;
 }
+
 .Hover-effect::after {
     content: "";
     position: absolute;
@@ -983,4 +996,94 @@ footer {
 
 .Hover-effect:hover::after {
     transform: scale(1, 1);
+}
+
+
+/* notez section */
+.notez-head {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 5%;
+    margin-bottom: 7%;
+    text-align: center;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 72px;
+
+    color: #000000;
+}
+
+.notez-imp {
+    margin: 3% 15%;
+    line-height: 2;
+    font-family: 'Arima Madurai';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+
+
+    color: #000000;
+
+}
+
+.notez-img {
+    justify-content: space-around;
+    align-content: center;
+    display: flex;
+
+}
+
+.nt-img {
+    width: 35%;
+}
+
+.af6 {
+    margin-top: 7%;
+    margin-left: 2%;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    
+
+    color: #000000;
+
+}
+
+.notez-news-content {
+    margin: 8% 15%;
+   
+    display: flex;
+    flex-direction: column-reverse;
+   
+    
+    /* justify-content: space-around; */
+}
+
+.content-notez {
+    display: flex;
+
+}
+
+.ndate {
+    display: flex;
+    justify-self: center;
+    font-size: 26px;
+    margin: 1%;
+}
+
+.nlink {
+    display: flex;
+    justify-self: center;
+    font-size: 26px;
+    margin: 1%;
+}
+
+.npbtn {
+    margin: 1%;
 }
