@@ -903,3 +903,62 @@ footer {
     text-align: left;
     margin-top: 8%;
 }
+
+
+/* news api */
+
+.news-img {
+    max-width: 100%;
+    transition: all 0.7s ;
+}
+
+.news-container{
+    margin-bottom: 69px;
+    padding: 0 1rem;
+    padding-top: 92px;
+}
+.news{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    grid-gap: 2rem;
+
+}
+.news-box{
+    transition: all 0.3s ;
+    text-decoration: none;
+    color: rgb(29, 25, 25);
+
+    background-color: white;
+    padding: 20px;
+}
+
+.news-box:hover{
+    text-decoration: none;
+    color: rgb(29, 25, 25);;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.16), 0 3px 3px rgba(0,0,0,0.23);
+}
+
+.Hover-effect {
+    position: relative;
+}
+:root{
+    --underline_color: red;
+    --underline-hight:0.175rem;
+}
+.Hover-effect::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: var(--underline-hight);
+    background-color: var(--underline_color);
+    left: 0;
+    bottom: 0;
+    transform: scale(0, 1);
+    transition: transform 0.3s ease;
+}
+
+
+
+.Hover-effect:hover::after {
+    transform: scale(1, 1);
+}

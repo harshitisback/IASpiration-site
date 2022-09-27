@@ -1,5 +1,9 @@
 const express = require('express');
 const bodyparser = require('body-parser');
+const axios = require('axios')
+const newsr=express.Router()
+const moment = require('moment')
+const math = require('math')
 const ejs = require('ejs');
 
 const app = express();
@@ -84,9 +88,29 @@ app.route("/interview")
 
 
 app.route("/notez")
-    .get(function (req, res) {
-        
+    .get(async function (req, res) {
+        try {
+            var url = 'http://newsapi.org/v2/top-headlines?' +
+              'country=in&' +
+              'apiKey=36f3e29b704f41339af8439dc1228334';
+    
+            const news_get =await axios.get(url)
+            res.render('newsapi',{articles:news_get.data.articles})
+        }catch (error) {
+            if(error.response){
+                console.log(error)
+            }
+    
+        }
+        // res.render("newsapi");
+
+    })
+    .post(function (req, res) {
+
     });
+
+
+
 
 
 
