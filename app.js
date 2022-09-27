@@ -178,7 +178,7 @@ app.route("/notez")
 
 
 app.get("/contact", function (req, res) {
-    res.send("welcome to the contact page");
+    res.render("contact");
     
 });
 
