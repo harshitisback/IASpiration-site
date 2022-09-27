@@ -21,19 +21,21 @@
 
         <div class="contact-pg">
 
+            
 
-            <form>
+
+            <form action="/contact" method="post">
                 <div class="row">
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Email">
+                        <input type="text" class="form-control" name="email" placeholder="Email">
                     </div>
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Name">
+                        <input type="text" class="form-control" name="name" placeholder="Name">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Message</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="3"></textarea>
                 </div>
                 <br>
                 <button type="submit" class="btn btn-lg btn-outline-primary mb-2">Send</button>

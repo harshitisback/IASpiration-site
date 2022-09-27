@@ -25,6 +25,7 @@
     "math": "^0.0.3",
     "moment": "^2.29.4",
     "mongoose": "^6.6.2",
+    "nodemailer": "^6.7.8",
     "nodemon": "^2.0.20"
   }
 }

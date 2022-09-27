@@ -5,6 +5,8 @@ const newsr = express.Router()
 const moment = require('moment')
 const math = require('math')
 const ejs = require('ejs');
+const nodemailer = require("nodemailer");
+
 
 const app = express();
 
@@ -33,6 +35,14 @@ var notezNews = new Schema({
 
 var ntNews = mongoose.model('newspaper', notezNews);
 
+
+var contactSchema = new Schema({
+        name: String, 
+        email: String,
+        message: String
+});
+// Compile model from schema
+var contactModel = mongoose.model('contac', contactSchema );
 
 
 
@@ -76,6 +86,57 @@ let prearr = [
         title: "CSAT",
         link: "https://drive.google.com/uc?export=download&id=1ir4nCCBA-K77mcTfeAX-HeoIdM-xDMZL"
     }
+]
+
+let mainsarr = [
+    {
+        title: "HISTORY",
+        link: "https://drive.google.com/uc?export=download&id=1zIxli8iDrVpgvcb01qF9UheoudLEfb_t"
+    },
+    {
+        title: "GEOGRAPHY",
+        link: "https://drive.google.com/file/d/145Ag6h8kirWkgj_rLIx6Ou6UuKfg6WdY/view?usp=sharing"
+    },
+    {
+        title: "ECONOMICS",
+        link: "https://drive.google.com/file/d/1GJ1JG_K41AkceLbs8ok1U7ycFKY0qx0v/view?usp=sharing"
+    },
+    {
+        title: "INDIAN POLITY",
+        link: "https://drive.google.com/file/d/1lytkF-vTp2IPz6qIsM-yv_454AaERAxj/view?usp=sharing"
+    },
+    {
+        title: "INTERNATIONAL RELATIONS",
+        link: "https://drive.google.com/file/d/1ViYHy4WOwMHoYCVMkfYbn77ktaKwVYV2/view?usp=sharing"
+    },
+    {
+        title: "ETHICS",
+        link: "https://drive.google.com/file/d/18vuPYTm0lWoywr4JSHw8UaxeD7FZ67om/view?usp=sharing"
+    }
+]
+
+let pyq = [
+    {
+        title: "2021",
+        link: "https://drive.google.com/uc?export=download&id=1T_rwZWa-r3Dyt9Q-9C4qBlIXDVXU12FN"
+    },
+    {
+        title: "2020",
+        link: "https://drive.google.com/uc?export=download&id=1tI9emo29UrkApyFJ5dGf5tkVRaDbIka4"
+    },
+    {
+        title: "2019",
+        link: "https://drive.google.com/uc?export=download&id=1mvIeUj2WT7jB4eEFaju-H4HViWvcSfx-"
+    },
+    {
+        title: "2018",
+        link: "https://drive.google.com/file/d/1iyIbOyEDTXdkIyqaGVoCabA3pYnr-sjB/view?usp=sharing"
+    },
+    {
+        title: "2017",
+        link: "https://drive.google.com/uc?export=download&id=1G9p1kmRRiuBXN7SuY8sMRNVwGVTHKaka"
+    }
+    
 ]
 
 
@@ -182,7 +243,52 @@ app.get("/contact", function (req, res) {
     
 });
 
+app.post("/contact" , async function (req, res) {  
 
+    let email = req.body.email;
+    let name = req.body.name;
+    let message = req.body.message;
+
+    
+
+    
+    const newMail = new contactModel({
+        name: name,
+        email: email,
+        message:message
+    });
+
+    newMail.save();
+
+    const transporter = nodemailer.createTransport({
+        host: 'smtp.ethereal.email',
+        port: 587,
+        auth: {
+            user: 'jerel.bosco11@ethereal.email',
+            pass: 'wmzSPeKHmGRJqeqAUg'
+        },
+        tls:{
+            rejectUnauthorized:false
+        }
+        
+    });
+    
+     
+      let info = await transporter.sendMail({
+        from: '"Harshit" <jerel.bosco11@ethereal.email>', 
+        to: email, 
+        subject: "Your message we recieved", 
+        text: "Hello its harshit thanks for trying to contact us we will reach to you soon", 
+        
+      });
+    
+      console.log("Message sent: %s", info.messageId);
+      console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+      
+      res.redirect("/contact");
+
+    
+});
 
 app.get("/:pre", function (req, res) {
     let para = req.params.pre;
@@ -190,13 +296,19 @@ app.get("/:pre", function (req, res) {
     if (para === "prelims1") {
         res.render("prelims1", { resarr: prearr, preHead: "Prelims" });
     } else if (para === "mains1") {
-        res.render("prelims1", { resarr: prearr, preHead: "Mains" });
-    } else {
+        res.render("prelims1", { resarr: mainsarr, preHead: "Mains" });
+    }else if(para === "pyq"){
+        res.render("prelims1", { resarr: pyq, preHead: "PYQ" });
+    }
+    
+    else {
         res.send("Error 404");
     }
 
 
 });
+
+
 
 
 
