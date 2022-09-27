@@ -1087,3 +1087,35 @@ footer {
 .npbtn {
     margin: 1%;
 }
+
+/* Resources Section */
+
+.pre-resh {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 72px;
+
+    color: #000000;
+
+}
+
+.res-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+@media(max-width:576px){
+    .res-container{
+        flex-direction: column;
+        justify-content: center;
+    }
+}

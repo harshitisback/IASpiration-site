@@ -26,12 +26,12 @@ var ytModel = mongoose.model('ytlinks', youtubemock);
 // model for notez
 var notezNews = new Schema({
 
-        date: String,
-        nplink: String,
-        notes: String
+    date: String,
+    nplink: String,
+    notes: String
 });
 
-var ntNews = mongoose.model('newspaper', notezNews );
+var ntNews = mongoose.model('newspaper', notezNews);
 
 
 
@@ -51,6 +51,32 @@ app.get("/", function (req, res) {
 });
 
 
+let prearr = [
+    {
+        title: "HISTORY",
+        link: "https://drive.google.com/uc?export=download&id=1dWL-WFHTONV13N_OxudVMB9UBgFk1NCm"
+    },
+    {
+        title: "GEOGRAPHY",
+        link: "https://drive.google.com/uc?export=download&id=1wNv1kC8yoDIMdjgli9zb_-Q9Wi8yIEpl"
+    },
+    {
+        title: "ECONOMICS",
+        link: "https://drive.google.com/uc?export=download&id=1_WTBc3WBnp9A9Te7X5rXN0THsKhhUfL9"
+    },
+    {
+        title: "INDIAN POLITY",
+        link: "https://drive.google.com/uc?export=download&id=10MOxJkDAqaeFZPZfrKEmxTovmnwGKdW7"
+    },
+    {
+        title: "INTERNATIONAL RELATIONS",
+        link: "https://drive.google.com/uc?export=download&id=1s9SFrTZbidhNw1NrFvyuvEN5Ji7rMrPf"
+    },
+    {
+        title: "CSAT",
+        link: "https://drive.google.com/uc?export=download&id=1ir4nCCBA-K77mcTfeAX-HeoIdM-xDMZL"
+    }
+]
 
 
 app.get("/guide", function (req, res) {
@@ -117,7 +143,7 @@ app.route("/articles")
 
     })
     .post(function (req, res) {
-        
+
 
     });
 
@@ -125,10 +151,10 @@ app.route("/articles")
 app.route("/notez")
     .get(function (req, res) {
 
-        ntNews.find(function (err, found) {  
-            if(!err){
-                res.render("notez", {news:found});
-            }else {
+        ntNews.find(function (err, found) {
+            if (!err) {
+                res.render("notez", { news: found });
+            } else {
                 res.send(err);
             }
         });
@@ -140,15 +166,38 @@ app.route("/notez")
         let link = req.body.nlink;
         let notes = req.body.notes;
         const newNewsP = new ntNews({
-            date:date,
-            nplink:link,
-            notes:notes
+            date: date,
+            nplink: link,
+            notes: notes
 
         });
 
-        newNewsP.save().then(()=> res.send("Saved"));
+        newNewsP.save().then(() => res.send("Saved"));
 
     });
+
+
+app.get("/contact", function (req, res) {
+    res.send("welcome to the contact page");
+    
+});
+
+
+
+app.get("/:pre", function (req, res) {
+    let para = req.params.pre;
+
+    if (para === "prelims1") {
+        res.render("prelims1", { resarr: prearr, preHead: "Prelims" });
+    } else if (para === "mains1") {
+        res.render("prelims1", { resarr: prearr, preHead: "Mains" });
+    } else {
+        res.send("Error 404");
+    }
+
+
+});
+
 
 
 

@@ -1,0 +1,28 @@
+<%- include ("header") -%>
+<%- include ("navbar") -%>
+
+
+<div class="pre-resh">
+    <h1><%= preHead %>  Complete Material</h1>
+</div>
+
+<div class="res-container">
+
+
+<% for( let i = 0; i < resarr.length; i++ ) { %>
+       
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%= resarr[i].title %> </h5>
+          <h6 class="card-subtitle mb-2 text-muted">Resources are the key</h6>
+          <p class="card-text">Click on the Download link given below to download this resource. </p>
+          <a href=<%= resarr[i].link  %>  class="card-link">Download</a>
+          
+        </div>
+      </div>
+
+<% } %>
+
+</div>
+
+<%- include ("footer") -%>
