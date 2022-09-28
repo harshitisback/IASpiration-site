@@ -842,9 +842,11 @@ footer {
 
 .upsc-image {
     /* width: 75%; */
-    padding-left: 15%;
+    margin-left: 7%;
 
 }
+
+
 
 #second-page {
     padding-left: 5%;
@@ -1086,6 +1088,30 @@ footer {
 
 .npbtn {
     margin: 1%;
+}
+
+@media(max-width:576px){
+    .notez-news-content {
+        margin: 8% 0%;
+    /* justify-content: space-around; */
+    }
+    .ndate {
+        display: flex;
+        justify-self: center;
+        font-size: 1.2rem;
+        margin: 1%;
+    }
+    
+    .nlink {
+        display: flex;
+        justify-self: center;
+        font-size: 1.2rem;
+        margin: 1%;
+    }
+    
+    .npbtn {
+        margin: 1%;
+    }
 }
 
 /* Resources Section */
