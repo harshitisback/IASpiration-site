@@ -199,6 +199,8 @@ app.route("/articles")
                 console.log(error)
             }
 
+
+
         }
         // res.render("newsapi");
 
@@ -260,32 +262,9 @@ app.post("/contact" , async function (req, res) {
 
     newMail.save();
 
-    const transporter = nodemailer.createTransport({
-        host: 'smtp.ethereal.email',
-        port: 587,
-        auth: {
-            user: 'jerel.bosco11@ethereal.email',
-            pass: 'wmzSPeKHmGRJqeqAUg'
-        },
-        tls:{
-            rejectUnauthorized:false
-        }
-        
-    });
     
-     
-      let info = await transporter.sendMail({
-        from: '"Harshit" <jerel.bosco11@ethereal.email>', 
-        to: email, 
-        subject: "Your message we recieved", 
-        text: "Hello its harshit thanks for trying to contact us we will reach to you soon", 
-        
-      });
-    
-      console.log("Message sent: %s", info.messageId);
-      console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
       
-      res.redirect("/contact");
+    res.redirect("/contact");
 
     
 });
