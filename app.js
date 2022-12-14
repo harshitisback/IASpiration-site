@@ -7,7 +7,6 @@ const math = require('math')
 const ejs = require('ejs');
 const nodemailer = require("nodemailer");
 
-
 const app = express();
 
 var mongoose = require('mongoose');
@@ -57,8 +56,6 @@ app.use(express.static(__dirname + '/public'));
 
 
 app.get("/", function (req, res) {
-
-
 
     res.render("home");
 
@@ -267,9 +264,8 @@ app.post("/contact" , async function (req, res) {
     newMail.save();
 
     
-      
+    
     res.redirect("/contact");
-
     
 });
 
@@ -288,15 +284,7 @@ app.get("/:pre", function (req, res) {
         res.send("Error 404");
     }
 
-
 });
-
-
-
-
-
-
-
 
 
 
