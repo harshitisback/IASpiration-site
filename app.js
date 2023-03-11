@@ -6,6 +6,9 @@ const moment = require('moment')
 const math = require('math')
 const ejs = require('ejs');
 const nodemailer = require("nodemailer");
+const userModel = require("./models/user");
+const {prearr,mainsarr,pyq} = require("./components/links");
+
 
 const app = express();
 
@@ -49,95 +52,80 @@ app.set('view engine', 'ejs');
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
-app.get("/", function (req, res) {
+app.get("/home", function (req, res) {
 
     res.render("home");
 
 });
 
-let prearr = [
-    {
-        title: "HISTORY",
-        link: "https://drive.google.com/uc?export=download&id=1dWL-WFHTONV13N_OxudVMB9UBgFk1NCm"
-    },
-    {
-        title: "GEOGRAPHY",
-        link: "https://drive.google.com/uc?export=download&id=1wNv1kC8yoDIMdjgli9zb_-Q9Wi8yIEpl"
-    },
-    {
-        title: "ECONOMICS",
-        link: "https://drive.google.com/uc?export=download&id=1_WTBc3WBnp9A9Te7X5rXN0THsKhhUfL9"
-    },
-    {
-        title: "INDIAN POLITY",
-        link: "https://drive.google.com/uc?export=download&id=10MOxJkDAqaeFZPZfrKEmxTovmnwGKdW7"
-    },
-    {
-        title: "INTERNATIONAL RELATIONS",
-        link: "https://drive.google.com/uc?export=download&id=1s9SFrTZbidhNw1NrFvyuvEN5Ji7rMrPf"
-    },
-    {
-        title: "CSAT",
-        link: "https://drive.google.com/uc?export=download&id=1ir4nCCBA-K77mcTfeAX-HeoIdM-xDMZL"
-    }
-]
-
-let mainsarr = [
-    {
-        title: "HISTORY",
-        link: "https://drive.google.com/uc?export=download&id=1zIxli8iDrVpgvcb01qF9UheoudLEfb_t"
-    },
-    {
-        title: "GEOGRAPHY",
-        link: "https://drive.google.com/file/d/145Ag6h8kirWkgj_rLIx6Ou6UuKfg6WdY/view?usp=sharing"
-    },
-    {
-        title: "ECONOMICS",
-        link: "https://drive.google.com/file/d/1GJ1JG_K41AkceLbs8ok1U7ycFKY0qx0v/view?usp=sharing"
-    },
-    {
-        title: "INDIAN POLITY",
-        link: "https://drive.google.com/file/d/1lytkF-vTp2IPz6qIsM-yv_454AaERAxj/view?usp=sharing"
-    },
-    {
-        title: "INTERNATIONAL RELATIONS",
-        link: "https://drive.google.com/file/d/1ViYHy4WOwMHoYCVMkfYbn77ktaKwVYV2/view?usp=sharing"
-    },
-    {
-        title: "ETHICS",
-        link: "https://drive.google.com/file/d/18vuPYTm0lWoywr4JSHw8UaxeD7FZ67om/view?usp=sharing"
-    }
-]
 
 
-let pyq = [
-    {
-        title: "2021",
-        link: "https://drive.google.com/uc?export=download&id=1T_rwZWa-r3Dyt9Q-9C4qBlIXDVXU12FN"
-    },
-    {
-        title: "2020",
-        link: "https://drive.google.com/uc?export=download&id=1tI9emo29UrkApyFJ5dGf5tkVRaDbIka4"
-    },
-    {
-        title: "2019",
-        link: "https://drive.google.com/uc?export=download&id=1mvIeUj2WT7jB4eEFaju-H4HViWvcSfx-"
-    },
-    {
-        title: "2018",
-        link: "https://drive.google.com/file/d/1iyIbOyEDTXdkIyqaGVoCabA3pYnr-sjB/view?usp=sharing"
-    },
-    {
-        title: "2017",
-        link: "https://drive.google.com/uc?export=download&id=1G9p1kmRRiuBXN7SuY8sMRNVwGVTHKaka"
-    }
+app.get("/", function(req, res){
+    res.render("signup");
+});
+
+app.post("/signup",function(req, res){
+    let name = req.body.uname;
+    let uemail = req.body.uemail;
+    let upass = req.body.upassword;
+    let cpass = req.body.rupassword;
+
+    userModel.findOne({email:uemail},(err,found) =>{
+        if(err){
+            console.log(err);
+        }else if(found){
+            res.render("error",{trgt:"User already created."});
+        }else{
+            if(upass!=cpass){
+                res.render("error",{trgt:"Password Not match"});
+            }else{
+                const newUser = new userModel({
+                    name:name,
+                    email:uemail,
+                    password:upass,
+                    cpassword:cpass
+                })
+            
+                newUser.save((error,result)=>{
+                    if(error){
+                        console.log(error);
+                    }else{
+                        console.log("saved succeful");
+                    }
+                })
+            }
+           
+        }
+    })
+
     
-]
+});
+
+app.get("/login",(req,res)=>{
+    res.render("login");
+})
+
+app.post("/login",(req,res)=>{
+    let lemail = req.body.lemail;
+    let pass = req.body.lpassword;
+
+    userModel.findOne({email:lemail, password:pass}, (err, found)=>{
+        if(found){
+            res.redirect("/home");
+        }else{
+            res.render("error",{trgt:"Check you Id and Password "});
+        }
+    })
+})
 
 
 app.get("/guide", function (req, res) {
     res.render("roadmap");
 });
+
+app.get("/about",function(req,res){
+    res.render("about");
+})
 
 
 app.get("/prelims", function (req, res) {

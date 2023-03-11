@@ -1,0 +1,51 @@
+/* navbar items */
+
+.nav-logo {
+
+    width: 15%;
+    /* display: inline-block; */
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+
+@media only screen and (max-width: 576px) {
+    .nav-logo {
+        width: 25%;
+        position: absolute;
+
+    }
+}
+
+.navbarwhole {
+    margin-bottom: 5%;
+}
+
+.list {
+    margin-top: 2%;
+    margin-left: 55%;
+}
+
+.navitems {
+    letter-spacing: 2px;
+    margin: 1%;
+    font-size: 20px;
+
+}
+
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}

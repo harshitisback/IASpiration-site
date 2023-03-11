@@ -45,7 +45,7 @@ body {
 
 .list {
     margin-top: 2%;
-    margin-left: 55%;
+    margin-left: 50%;
 }
 
 .navitems {
@@ -1051,7 +1051,7 @@ footer {
     font-style: normal;
     font-weight: 700;
     font-size: 2rem;
-    
+
 
     color: #000000;
 
@@ -1059,11 +1059,11 @@ footer {
 
 .notez-news-content {
     margin: 8% 15%;
-   
+
     display: flex;
     flex-direction: column-reverse;
-   
-    
+
+
     /* justify-content: space-around; */
 }
 
@@ -1090,25 +1090,26 @@ footer {
     margin: 1%;
 }
 
-@media(max-width:576px){
+@media(max-width:576px) {
     .notez-news-content {
         margin: 8% 0%;
-    /* justify-content: space-around; */
+        /* justify-content: space-around; */
     }
+
     .ndate {
         display: flex;
         justify-self: center;
         font-size: 1.2rem;
         margin: 1%;
     }
-    
+
     .nlink {
         display: flex;
         justify-self: center;
         font-size: 1.2rem;
         margin: 1%;
     }
-    
+
     .npbtn {
         margin: 1%;
     }
@@ -1120,7 +1121,7 @@ footer {
     display: flex;
     justify-content: center;
     align-content: center;
-    
+
     margin-top: 5%;
     margin-bottom: 5%;
     font-family: 'Poppins';
@@ -1139,8 +1140,8 @@ footer {
     align-content: center;
 }
 
-@media(max-width:576px){
-    .res-container{
+@media(max-width:576px) {
+    .res-container {
         flex-direction: column;
         justify-content: center;
     }
@@ -1179,7 +1180,7 @@ footer {
     align-content: center;
 }
 
-@media(max-width:576px){
+@media(max-width:576px) {
     .contact-img {
         width: 75%;
     }
@@ -1192,7 +1193,7 @@ footer {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
-   
+
     line-height: 72px;
 }
 
@@ -1204,11 +1205,11 @@ footer {
 }
 
 .dev-img {
-    
+
     display: flex;
     justify-content: center;
     align-content: center;
-    
+
 }
 
 .cdev {
@@ -1218,5 +1219,35 @@ footer {
 }
 
 
+/* Error page  */
+
+.error{
+    background-image: url(../images/errpages.jpg);
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    font-family: 'Poppins';
+    height: 600px;
+}
+
+.er4{
+    margin-top: 10%;
+    text-align: center;
+    font-size: 90px;
+    font-weight: bold;
+}
+
+@media(max-width:575px){
+    .er4{
+        margin-top: 7%;
+        font-size: 70px;
+    }
+}
 
 
+
+  
+  
+  
+  
