@@ -22,11 +22,9 @@ var youtubemock = new Schema({
 });
 
 
-
 // update
 
 var ytModel = mongoose.model('ytlinks', youtubemock);
-
 
 // model for notez
 var notezNews = new Schema({
@@ -38,7 +36,6 @@ var notezNews = new Schema({
 
 var ntNews = mongoose.model('newspaper', notezNews);
 
-
 var contactSchema = new Schema({
         name: String, 
         email: String,
@@ -48,19 +45,15 @@ var contactSchema = new Schema({
 var contactModel = mongoose.model('contac', contactSchema );
 
 
-
-
 app.set('view engine', 'ejs');
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
-
 
 app.get("/", function (req, res) {
 
     res.render("home");
 
 });
-
 
 let prearr = [
     {
@@ -115,6 +108,7 @@ let mainsarr = [
         link: "https://drive.google.com/file/d/18vuPYTm0lWoywr4JSHw8UaxeD7FZ67om/view?usp=sharing"
     }
 ]
+
 
 let pyq = [
     {
@@ -191,17 +185,15 @@ app.route("/articles")
         try {
             var url = 'http://newsapi.org/v2/top-headlines?' +
                 'country=in&' +
-                'apiKey=eaf5b5e072534b1688a2522959aa37b9';
+                'apiKey=c34e17d75cb34c7b9d1396eb86fce3f0';
 
             const news_get = await axios.get(url)
+           
             res.render('newsapi', { articles: news_get.data.articles })
         } catch (error) {
             if (error.response) {
                 console.log(error)
             }
-
-
-
         }
         // res.render("newsapi");
 
@@ -256,7 +248,7 @@ app.post("/contact" , async function (req, res) {
 
     
     const newMail = new contactModel({
-        name: name,
+        name:name,
         email: email,
         message:message
     });
@@ -285,7 +277,6 @@ app.get("/:pre", function (req, res) {
     }
 
 });
-
 
 
 app.listen(process.env.PORT || 3000, function () {
