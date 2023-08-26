@@ -61,7 +61,11 @@ app.get("/home", function (req, res) {
 
 
 app.get("/", function(req, res){
-    res.render("home");
+    res.render("letus");
+});
+
+app.get("/signup", function (req, res) {
+    res.render("signup");
 });
 
 app.post("/signup",function(req, res){

@@ -1,0 +1,1 @@
+document.getElementById('imgline').style.animation = 'fading 2s infinite'
