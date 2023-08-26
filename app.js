@@ -95,11 +95,14 @@ app.post("/signup",function(req, res){
                         console.log(error);
                     }else{
                         console.log("saved succeful");
+                        
                     }
                 })
             }
            
         }
+
+        res.render("home");
     })
 
     
