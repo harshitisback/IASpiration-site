@@ -34,3 +34,16 @@
     margin-top: 6% !important;
     margin-bottom: 4% !important;
 }
+
+@media(max-width: 576px) {
+    .appre {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-left: 5%;
+        margin-right: 5%;
+        
+    }
+
+   
+    
+}
