@@ -58,8 +58,6 @@ app.get("/home", function (req, res) {
 
 });
 
-
-
 app.get("/", function(req, res){
     res.render("letus");
 });
@@ -98,14 +96,10 @@ app.post("/signup",function(req, res){
                         
                     }
                 })
-            }
-           
+            }  
         }
-
         res.render("home");
     })
-
-    
 });
 
 app.get("/login",(req,res)=>{
@@ -183,6 +177,7 @@ app.route("/articles")
                 'apiKey=c34e17d75cb34c7b9d1396eb86fce3f0';
 
             const news_get = await axios.get(url)
+
            
             res.render('newsapi', { articles: news_get.data.articles })
         } catch (error) {
@@ -191,11 +186,8 @@ app.route("/articles")
             }
         }
         // res.render("newsapi");
-
     })
     .post(function (req, res) {
-
-
     });
 
 
@@ -239,9 +231,7 @@ app.post("/contact" , async function (req, res) {
     let name = req.body.name;
     let message = req.body.message;
 
-    
-
-    
+     
     const newMail = new contactModel({
         name:name,
         email: email,
